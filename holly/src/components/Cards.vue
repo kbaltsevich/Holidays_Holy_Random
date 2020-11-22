@@ -1,32 +1,16 @@
 <template>
-  <div v-on:click="shuffle" class="card">
-    <span v-if="!msg" v-on:click="shuffle">ВЫБЕРИ МЕНЯ!!</span>
-    <h1 v-if="msg">{{ msg }}</h1>
+  <div class="card">
+    <span>ВЫБЕРИ МЕНЯ!!</span>
   </div>
 </template>
 
 <script>
-import axios from "axios";
 export default {
   name: "Cards",
   data() {
     return {
       arr: [],
-      msg: "",
     };
-  },
-  methods: {
-    getArrayHolidays() {
-      return axios
-        .get("http://127.0.0.1:5000/get-holidays-arr")
-        .then((res) => (this.arr = JSON.parse(res.data)));
-    },
-    async shuffle() {
-      await this.getArrayHolidays();
-      const item = this.arr[Math.floor(Math.random() * this.arr.length)];
-      this.msg = item;
-      return;
-    },
   },
 };
 </script>

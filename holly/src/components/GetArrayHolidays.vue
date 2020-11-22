@@ -1,32 +1,30 @@
 <template>
   <div>
-    {{ arr }}
+    <div>
+      <h1>В лотерее участвуют:</h1>
+    </div>
+    <span v-for="a in arr" :key="a.id">{{ a }}</span>
   </div>
 </template>
 
 <script>
-// import axios from "axios";
 export default {
   name: "GetArrayHolidays",
-  props: ['arr'],
-  // data() {
-  //   return {
-  //     arr: [],
-  //   };
-  // },
-  // methods: {
-  //   getArrayHolidays() {
-  //     return axios
-  //       .get("http://127.0.0.1:5000/get-holidays-arr")
-  //       .then((res) => (this.arr = JSON.parse(res.data)));
-  //   },
-  // },
-  // mounted() {
-  //   this.getArrayHolidays();
-  // },
+  props: ["arr"],
 };
 </script>
 
-
 <style scoped>
+span {
+  margin: 5px;
+  font-family: 'Cristmas';
+  font-weight: bold;
+  font-size: 20px;
+}
+@font-face {
+  font-family: "Cristmas";
+  src: url("~@/assets/fonts/MountainsofChristmas-Bold.ttf");
+  font-weight: normal;
+  font-style: bold;
+}
 </style>

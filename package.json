@@ -1,5 +1,5 @@
 {
-  "name": "holydays_holy_random",
+  "name": "holidays_holy_random",
   "version": "1.0.0",
   "description": "Weekend & Holidays Random Shift Program",
   "main": "app.js",
@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "client": "npm run serve --prefix ./holly",
     "server": "nodemon index.js",
-    "start": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "cross-env NODE_ENV=production node app.js"
   },
   "repository": {
     "type": "git",
@@ -38,6 +39,7 @@
   },
   "devDependencies": {
     "body-parser": "^1.19.0",
+    "cross-env": "^7.0.2",
     "nodemon": "^2.0.6"
   }
 }
